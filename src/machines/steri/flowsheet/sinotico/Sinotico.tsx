@@ -4,7 +4,7 @@ import { Path, Pump, ReactorLevel } from './components/Path';
 import { PATHS } from './Sinotico.constants';
 import { ProcessLine } from './components/ProcessLine';
 import { Lamp } from './components/Lamp';
-import { SteriContext } from '../steriMachine';
+import { SteriContext } from '../../automatic/automatic.machine';
 
 const StyledSinotico = styled.svg`
   margin: 12px 0;

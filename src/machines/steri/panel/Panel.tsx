@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom';
+import { Prompt, Redirect } from 'react-router-dom';
 import { Navigation } from './navigation/Navigation';
 import { Automatic } from './automatic/Automatic';
 import { Manual } from './manual/Manual';
 import { Footer } from './footer/Footer';
-import { SteriContext } from '../steriMachine';
+import { SteriContext } from '../automatic/automatic.machine';
 
 const StyledPanel = styled.div`
   width: 100%;
@@ -24,10 +24,16 @@ const PanelBody = styled.div`
 
 interface Props {
   context: SteriContext;
+  mode: string | undefined;
 }
 
-export const Panel: React.FC<Props> = ({ context }) => {
-  const { mode } = useParams();
+const allowedRoutes = ['automatic', 'manual'];
+
+export const Panel: React.FC<Props> = ({ context, mode }) => {
+  if (!mode || !allowedRoutes.includes(mode)) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <StyledPanel>
       <Navigation />
@@ -36,6 +42,7 @@ export const Panel: React.FC<Props> = ({ context }) => {
         {mode === 'manual' && <Manual context={context} />}
       </PanelBody>
       <Footer />
+      <Prompt message="The machine is still working... Are you sure you want to exit?" />
     </StyledPanel>
   );
 };

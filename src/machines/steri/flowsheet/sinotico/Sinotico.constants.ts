@@ -12,7 +12,14 @@ export const PATHS = {
     V 40
     h 34
   `,
-  outletLine1: 'M362.5 290h25v50h25',
+
+  outletLine1: `
+    M 362.5 290
+    h25
+    v50
+    h25
+  `,
+
   feedLine2: 'M212.5 340h25v-50h25',
   feedLine1: 'M112.5 340h50',
   feedLiquid: 'M12.5 266.55h100V365h-100z',

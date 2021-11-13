@@ -30,7 +30,7 @@ export interface SteriContext {
   lamp: boolean;
 }
 
-export const steriMachine = Machine<SteriContext, SteriStateSchema, SteriEvent>(
+export const automaticMachine = Machine<SteriContext, SteriStateSchema, SteriEvent>(
   {
     id: 'steri',
     initial: 'idle',

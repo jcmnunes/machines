@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router-dom';
-import { SteriMachineView } from '../machines/steri/SteriMachine.view';
+import { SteriMachine } from '../machines/steri/SteriMachine';
 
 interface Props {}
 
@@ -8,7 +8,7 @@ export const Routes: React.FC<Props> = () => {
   return (
     <Switch>
       <Route path="/steri/:mode">
-        <SteriMachineView />
+        <SteriMachine />
       </Route>
       <Route path="/">
         <div>

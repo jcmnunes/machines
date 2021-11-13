@@ -15,7 +15,7 @@ export const Footer: React.FC<Props> = () => {
   const history = useHistory();
   return (
     <StyledFooter>
-      <Button appearance="minimal" iconBefore="UNDO" onClick={() => history.push('/')}>
+      <Button appearance="minimal" iconBefore="ARROW_C_LEFT" onClick={() => history.push('/')}>
         Exit
       </Button>
     </StyledFooter>
